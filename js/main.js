@@ -13,7 +13,7 @@ var webstore = new Vue({
     },
     methods: {
         getLessons: function () {
-            fetch("http://localhost:3000/collection/lessons")
+            fetch("https://idifavour-cst2.herokuapp.com/collection/lessons")
                 .then(res => {
                     return res.json()
                 })
@@ -103,7 +103,7 @@ var webstore = new Vue({
                 items: this.cart
             }
             let order_string = (JSON.stringify(order))
-            fetch('http://localhost:3000/collection/orders', {
+            fetch('https://idifavour-cst2.herokuapp.com/collection/orders', {
                 method: "POST",
                 body: order_string,
                 headers: {
@@ -133,7 +133,7 @@ var webstore = new Vue({
                 }
             }
             let stockString = (JSON.stringify(stockNew))
-            fetch('http://localhost:3000/collection/lessons', {
+            fetch('https://idifavour-cst2.herokuapp.com/collection/lessons', {
                 method: "PUT",
                 body: stockString,
                 headers: {
@@ -164,7 +164,7 @@ var webstore = new Vue({
             
         },
         searchFilter: function () {
-            fetch(`http://localhost:3000/collection/lessons/search?filter=${this.searchInput}`)
+            fetch(`https://idifavour-cst2.herokuapp.com/collection/lessons/search?filter=${this.searchInput}`)
                 .then(res => {
                     return res.json()
                 })
